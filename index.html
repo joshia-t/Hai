@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Hehehe</h2>
+
+<button onclick="myFunction()">Click me!</button>
+
+<p id="demo"></p>
+
+<script>
+let person = null;
+function myFunction() {
+  person = prompt("Hai, siapa kamu?", "");
+  while (person == null || person == "") {
+    person = prompt("IHH KASI NAMA GAK", "");
+  }
+  document.getElementById("demo").innerHTML = "Hai " + person + "! Apa kabar?";
+  setTimeout(() => {
+    step2();
+  }, 1500)
+}
+function step2() {
+    document.getElementById("demo").innerHTML = "Aku punya pantun nih mau denger ga?";
+    setTimeout(() => {
+        step3();
+    }, 2000)
+}
+function step3() {
+    if (confirm("Mau?") == true) {
+        pantun();
+    } else {
+        exit();
+    }
+}
+function pantun() {
+    promptType("Belajar tentang optimum", "cakep");
+    promptType("Bikin aku sangat demot", "asik");
+    promptType("Kalau kamu senyum senyum", "cakep");
+    promptType("Bikin aku sangat mleyot", "tepuk tangan");
+    document.getElementById("demo").innerHTML = "Makasih udah dengerin ya " + person + "!\nAyafluu banyaaak!";
+}
+function exit() {
+    document.getElementById("demo").innerHTML = "Yah okay, sampai jumpa " + person + "!";
+}
+function promptType(text, req) {
+  check = prompt(text + "\njawab '" + req + "'", "");
+  while (check != req) {
+    check = prompt(text + "\ndi jawab dong say :( '" + req + "'", "");
+  }
+}
+</script>
+
+</body>
+</html>
