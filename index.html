@@ -45,7 +45,8 @@ function exit() {
 }
 function promptType(text, req) {
   check = prompt(text + "\njawab '" + req + "'", "");
-  while (check != req) {
+  yessir = ["cakep", "asik", "tepuk tangan", "keren", "wow", "anjay"]
+  while (!yessir.includes(check)) {
     check = prompt(text + "\ndi jawab dong say :( '" + req + "'", "");
   }
 }
